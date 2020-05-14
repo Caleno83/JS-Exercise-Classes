@@ -151,15 +151,15 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor extends Lambdasian {
-  constructor (attr){
-    super(attr);
-    this.specialty = attr.specialty;
-    this.favLanguage = attr.favLanguage;
-    this.catchPhrase = attr.catchPhrase;
+  constructor (instrAttr){
+    super(instrAttr);
+    this.specialty = instrAttr.specialty;
+    this.favLanguage = instrAttr.favLanguage;
+    this.catchPhrase = instrAttr.catchPhrase;
   }
 
   demo(subject) {
- return `Today we are learning about ${subject}`;
+    return `Today we are learning about ${subject}`;
   };
 
   grade(student, subject) {
@@ -182,9 +182,26 @@ class Instructor extends Lambdasian {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
+class Student extends Lambdasian {
+  constructor(studentsAttr) {
+  super(studentsAttr);
+  this.previousBackground = studentsAttr.previousBackground;
+  this.className = studentsAttr.className;
+  this.favSubjects = studentsAttr.favSubjects;
+  };
 
-}
+  listSubjects() {
+    return `loving ${this.favSubjects}`
+  }
+  PRAssignment(subject) {
+    return `${this.name} has submitted a PR for ${subject}`
+  }
+  sprintChallenge(subject) {
+    return `${this.name} has begun sprint challenge on ${subject}`
+  };
+};
+
+
 
 /*
   TASK 6
